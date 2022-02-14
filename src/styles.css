@@ -1,8 +1,16 @@
+body {
+  margin: 0;
+}
+
 .app {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 20px;
   row-gap: 30px;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 500px) {
@@ -18,4 +26,13 @@
 
 h1 {
   text-align: center;
+  margin: 0;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 400;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
