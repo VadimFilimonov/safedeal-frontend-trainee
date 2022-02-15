@@ -18,7 +18,12 @@ const App = () => {
   return (
     <div className="app">
       <h1>TEST APP</h1>
-      {images.map(({ id, url }) => <img key={id} src={url} alt='' />)}
+      <main className="images">
+        {images.map(({ id, url }) => <img key={id} src={url} alt='' />)}
+      </main>
+      <footer>
+        © 2018-2019
+      </footer>
     </div>
   );
 }
