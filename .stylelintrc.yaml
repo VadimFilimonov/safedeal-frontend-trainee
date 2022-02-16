@@ -14,3 +14,4 @@ rules:
     - true
     - empty-line-between-groups: true
   order/properties-alphabetical-order: null
+  selector-class-pattern: null
