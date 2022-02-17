@@ -1,23 +1,18 @@
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-rational-order"
+    "stylelint-config-hudochenkov"
   ],
   "plugins": [
-    "stylelint-order",
-    "stylelint-config-rational-order/plugin"
+    "stylelint-order"
   ],
   "rules": {
     "at-rule-no-unknown": null,
     "declaration-empty-line-before": null,
     "order/properties-order": [],
-    "plugin/rational-order": [
-      true,
-      {
-        "empty-line-between-groups": true
-      }
-    ],
     "order/properties-alphabetical-order": null,
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "selector-max-id": null,
+    "selector-max-type": null
   }
 }
