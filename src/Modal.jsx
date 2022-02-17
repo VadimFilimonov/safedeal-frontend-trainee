@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import routes from './routes';
 
+const defaultFormState = { name: '', comment: '' };
+
 const normalizeDate = (timestamp) => {
   const date = new Date(timestamp);
   const day = date.getDate().toString().padStart(2, '0');
@@ -13,6 +15,7 @@ const normalizeDate = (timestamp) => {
 
 const Modal = ({ imageId, onClose }) => {
   const [data, setData] = useState({});
+  const [formState, setFormState] = useState(defaultFormState);
 
   useEffect(() => {
     const fetchImage = async () => {
@@ -23,6 +26,32 @@ const Modal = ({ imageId, onClose }) => {
 
     fetchImage();
   }, [imageId]);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch(routes.commentPath(imageId), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formState),
+    });
+    setData((prev) => {
+      const currentDate = Date.now();
+      const newComment = {
+        id: currentDate,
+        date: currentDate,
+        text: formState.comment,
+      };
+      return { ...prev, comments: [...prev.comments, newComment] };
+    });
+    setFormState(defaultFormState);
+  };
 
   if (Object.keys(data).length === 0) {
     return null;
@@ -40,6 +69,27 @@ const Modal = ({ imageId, onClose }) => {
             </div>
           ))}
         </div>
+        <form className="form" onSubmit={handleSubmit}>
+          <input
+            className="form__input"
+            type="text"
+            name="name"
+            placeholder="Ваше имя"
+            value={formState.name}
+            onChange={handleChange}
+          />
+          <input
+            className="form__input"
+            type="text"
+            name="comment"
+            placeholder="Ваш комментарий"
+            value={formState.comment}
+            onChange={handleChange}
+          />
+          <button className="form__button" type="submit">
+            Оставить комментарий
+          </button>
+        </form>
         <button
           className="modal__close"
           type="button"
