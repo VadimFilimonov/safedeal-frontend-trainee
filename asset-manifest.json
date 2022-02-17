@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/safedeal-frontend-trainee/static/css/main.6ca59751.css",
-    "main.js": "/safedeal-frontend-trainee/static/js/main.9582cde5.js",
+    "main.css": "/safedeal-frontend-trainee/static/css/main.82619968.css",
+    "main.js": "/safedeal-frontend-trainee/static/js/main.fead99bb.js",
     "index.html": "/safedeal-frontend-trainee/index.html",
     "static/media/close.svg": "/safedeal-frontend-trainee/static/media/close.160e4595f07702003e35.svg",
-    "main.6ca59751.css.map": "/safedeal-frontend-trainee/static/css/main.6ca59751.css.map",
-    "main.9582cde5.js.map": "/safedeal-frontend-trainee/static/js/main.9582cde5.js.map"
+    "main.82619968.css.map": "/safedeal-frontend-trainee/static/css/main.82619968.css.map",
+    "main.fead99bb.js.map": "/safedeal-frontend-trainee/static/js/main.fead99bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ca59751.css",
-    "static/js/main.9582cde5.js"
+    "static/css/main.82619968.css",
+    "static/js/main.fead99bb.js"
   ]
 }
