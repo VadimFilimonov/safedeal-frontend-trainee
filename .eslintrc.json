@@ -1,13 +1,13 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
-    "jest": true
+    "es6": true
   },
   "extends": [
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "airbnb",
+    "airbnb-base",
+    "airbnb/rules/react",
     "plugin:prettier/recommended"
   ],
   "parserOptions": {
@@ -17,7 +17,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "jsx-a11y", "import", "prettier"],
+  "plugins": ["react", "react-hooks", "import", "prettier"],
   "rules": {
     "react/prop-types": "off",
     "react/function-component-definition": [

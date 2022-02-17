@@ -11,6 +11,16 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -37,16 +47,15 @@ h1 {
   row-gap: 30px;
 }
 
+.images img {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 500px) {
   .images {
     grid-template-columns: 1fr;
     justify-items: center;
   }
-}
-
-.images img {
-  display: block;
-  max-width: 100%;
 }
 
 footer {
@@ -55,16 +64,13 @@ footer {
   align-items: center;
   justify-content: center;
   height: 56px;
+  margin-top: auto;
 
   color: #ccc;
   font-size: 14px;
   line-height: 16px;
 
   border-top: 1px solid #ccc;
-}
-
-.app footer {
-  margin-top: auto;
 }
 
 .shade {
@@ -86,18 +92,17 @@ footer {
 
   display: grid;
   grid-template-columns: 330px 1fr;
-
   box-sizing: border-box;
-
   width: 620px;
   max-width: 100%;
   padding: 30px 40px 30px 30px;
   overflow: auto;
 
+  font-family: Roboto, sans-serif;
+
   column-gap: 15px;
 
   background: white;
-
   transform: translate(-50%, -50%);
   row-gap: 30px;
 }
@@ -112,13 +117,8 @@ footer {
   }
 }
 
-.modal img {
-  max-width: 100%;
-}
-
 @media screen and (max-width: 500px) {
   .modal img {
-    display: block;
     max-width: calc(100% + 44px);
     margin: 0 -22px;
   }
@@ -140,8 +140,11 @@ footer {
 }
 
 .comments {
+  display: grid;
   grid-row: 1 / 3;
   grid-column: 2 / 3;
+  gap: 20px;
+  align-content: flex-start;
 }
 
 @media screen and (max-width: 500px) {
@@ -154,11 +157,6 @@ footer {
 
 .comment {
   font-size: 13px;
-  font-family: Roboto, sans-serif;
-}
-
-.comment + .comment {
-  margin-top: 20px;
 }
 
 .comment__date {
