@@ -84,7 +84,11 @@ const Modal = ({ imageId, onClose }) => {
             value={formState.comment}
             onChange={handleChange}
           />
-          <button className="form__button" type="submit">
+          <button
+            className="form__button"
+            type="submit"
+            disabled={formState.name === '' || formState.comment === ''}
+          >
             Оставить комментарий
           </button>
         </form>
